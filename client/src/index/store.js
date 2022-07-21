@@ -4,7 +4,17 @@ import rootReducer from './reducers';
 import logger from 'redux-logger';
 // And use redux-batched-subscribe as an example of adding enhancers
 
-const preloadedState = {};
+const preloadedState = {
+    from: 'Vancouver',
+    to: 'Toronto',
+    isCitySelectorVisible: false,
+    currentSelectingLeftCity: false,
+    cityData: null,
+    isLoadingCityData: false,
+    isDateSelectorVisible: false,
+    departDate: Date.now(),
+    highSpeed: false,
+};
 const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
