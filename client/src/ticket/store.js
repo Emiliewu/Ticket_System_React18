@@ -6,7 +6,19 @@ import logger from 'redux-logger';
 // const _ = require('lodash');
 
 
-const preloadedState = {};
+const preloadedState = {
+    departDate: Date.now(),
+    arriveDate: Date.now(),
+    departTimeStr: null,
+    arriveTimeStr: null,
+    departStation: null,
+    arriveStation: null,
+    trainNumber: null,
+    durationStr: null,
+    tickets: [],
+    isScheduleVisible: false,
+    searchParsed: false,
+};
 // const debounceNotify = _.debounce(notify => notify());
 const store = configureStore({
     reducer: rootReducer,
